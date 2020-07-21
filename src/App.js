@@ -6,12 +6,6 @@ import seedPalettes from './seedPalettes';
 import { generatePalette } from './colorHelpers';
 
 class App extends Component {
-  // findPalette(id) {
-  //   return seedPalettes.find(palette =>
-  //      palette.id === id
-  //   );
-  // }
-
   findPalette(id) {
     return seedPalettes.find(function(palette) {
         return palette.id === id;
@@ -21,7 +15,16 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => <PaletteList palettes={seedPalettes} />} />
+        <Route
+          exact
+          path="/"
+          render={(routeProps) => (
+            <PaletteList
+              palettes={seedPalettes}
+              {...routeProps}
+            />
+          )}
+        />
         <Route
           exact
           path="/palette/:id"
@@ -30,10 +33,6 @@ class App extends Component {
           )}
         />
       </Switch>
-
-      // <div>
-      //   <Palette palette={generatePalette(seedPalettes[4])} />
-      // </div>
     );
   }
 }
