@@ -120,7 +120,7 @@ const styles = {
     transition: "all 0.4s ease-in-out",
     transitionDelay: "0.3s"
   }
-}
+};
 
 export class ColorBox extends Component {
   constructor(props) {
@@ -131,7 +131,7 @@ export class ColorBox extends Component {
     };
 
     this.changeCopyState = this.changeCopyState.bind(this);
-  }
+  };
 
   changeCopyState() {
     this.setState({ copied: true }, () => {
