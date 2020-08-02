@@ -16,7 +16,6 @@ export default {
   },
   copyText: {
     color: props => chroma(props.background).luminance() >= 0.7 ? "black" : "white",
-
   },
   colorName: {
     color: props => chroma(props.background).luminance() <= 0.08 ? "white" : "black"
